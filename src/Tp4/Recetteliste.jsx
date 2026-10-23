@@ -4,6 +4,7 @@ import Recetteform from "./Recetteform";
 import Recettefilter from "./Recettefilter";
 import Carterecette from "./Carterecette";
 import Pagination from "./Pagination";
+import Aide from './Aide'
 
 const recettesInitiales = [
     {
@@ -165,26 +166,60 @@ export default function Recetteliste() {
         }
     }
 
-    return (
-        <div className="liste-recettes">
-            <h1>Mes recettes</h1>
 
-            <button onClick={creerRecette}>
-                Ajouter une recette
-            </button>
+return (
+    <div style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "30px 20px",
+        fontFamily: "Arial, sans-serif",
+        backgroundColor: "#f5f6f0",
+        minHeight: "100vh",
+        color: "#263b2b"
+    }}>
+        <h1 style={{
+            textAlign: "center",
+            color: "#0b3d2e",
+            fontSize: "32px",
+            marginBottom: "25px"
+        }}>
+            Mes recettes
+        </h1>
 
-            {formVisible && (
-                <Recetteform
-                    key={recetteEnCours ? recetteEnCours.id : "nouvelle"}
-                    recette={recetteEnCours}
-                    enregistrer={enregistrer}
-                    fermer={() => {
-                        setFormVisible(false);
-                        setRecetteEnCours(null);
-                    }}
-                />
-            )}
+        <button
+            onClick={creerRecette}
+            style={{
+                display: "block",
+                margin: "0 auto 25px",
+                padding: "12px 22px",
+                backgroundColor: "#0b3d2e",
+                color: "white",
+                border: "none",
+                borderRadius: "7px",
+                cursor: "pointer",
+                fontSize: "15px"
+            }}
+        >
+            Ajouter une recette
+        </button>
 
+        {formVisible && (
+            <Recetteform
+                key={recetteEnCours ? recetteEnCours.id : "nouvelle"}
+                recette={recetteEnCours}
+                enregistrer={enregistrer}
+                fermer={() => {
+                    setFormVisible(false);
+                    setRecetteEnCours(null);
+                }}
+            />
+        )}
+
+        <div style={{
+            display: "flex",
+            gap: "15px",
+            margin: "25px 0"
+        }}>
             <Recettefilter
                 nomr={nomr}
                 setNomr={(valeur) => {
@@ -197,31 +232,52 @@ export default function Recetteliste() {
                     setPageActuelle(1);
                 }}
             />
-
-            <p>{recettesFiltrees.length} recette(s) trouvée(s)</p>
-
-            <div className="grille-recettes">
-                {recettesAffichees.map((r) => (
-                    <Carterecette
-                        key={r.id}
-                        recette={r}
-                        modifier={modifierRecette}
-                        supprimer={supprimerRecette}
-                        dupliquer={dupliquerRecette}
-                    />
-                ))}
-            </div>
-
-            {recettesFiltrees.length === 0 && (
-                <p>Aucune recette trouvée.</p>
-            )}
-
-            <Pagination
-                totalRecettes={recettesFiltrees.length}
-                recettesParPage={recettesParPage}
-                pageActuelle={pageActuelle}
-                changerPage={setPageActuelle}
-            />
         </div>
-    );
+
+        <p style={{
+            textAlign: "center",
+            color: "#536653",
+            margin: "20px 0"
+        }}>
+            {recettesFiltrees.length} recette(s) trouvée(s)
+        </p>
+
+        <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            gap: "22px",
+            marginTop: "25px"
+        }}>
+            {recettesAffichees.map((r) => (
+                <Carterecette
+                    key={r.id}
+                    recette={r}
+                    modifier={modifierRecette}
+                    supprimer={supprimerRecette}
+                    dupliquer={dupliquerRecette}
+                />
+            ))}
+        </div>
+
+        {recettesFiltrees.length === 0 && (
+            <p style={{
+                textAlign: "center",
+                color: "#b64040",
+                margin: "25px"
+            }}>
+                Aucune recette trouvée.
+            </p>
+        )}
+
+        <Pagination
+            totalRecettes={recettesFiltrees.length}
+            recettesParPage={recettesParPage}
+            pageActuelle={pageActuelle}
+            changerPage={setPageActuelle}
+        />
+
+        <Aide />
+    </div>
+);
+
 }

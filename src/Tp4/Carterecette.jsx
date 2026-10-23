@@ -3,7 +3,7 @@ export default function Carterecette(props) {
     const recette = props.recette;
 
     return (
-        <div className="carte-recette">
+        <div className="carte-recette" style={{padding:'20px'}}>
             {recette.img && (
                 <img src={recette.img} alt={recette.nom} style={{    width:'100px',
     height:'100px'}} />
