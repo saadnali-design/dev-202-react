@@ -13,6 +13,7 @@ import Try from './Try/Try'
 import Recherche1 from './Recherche/Recherche1'
 import Fetch from './Recherche/Fetch'
 import Axios from './Recherche/Axios'
+import Recetteliste from './Tp4/Recetteliste'
 
 
 import Ex1 from './Tp3/Ex1'
@@ -105,7 +106,7 @@ function App() {
       <br />
       <br />
       <br />
-      <Ex1/> */}
+      <Ex1/> }
 
 
            <br />
@@ -127,7 +128,16 @@ function App() {
 <br/>
 <br/>
 <br/>
-<Axios/>
+<Axios/>*/}
+
+
+
+<br/>
+<br/>
+<br/>
+<Recetteliste/>
+
+
 
 
 

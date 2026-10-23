@@ -1,0 +1,191 @@
+.carte-recette {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    font-family: Arial, sans-serif;
+    margin: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carte-recette:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.carte-recette img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.infos-recette {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+.nom-recette {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2e5d34;
+}
+
+.categorie-recette {
+    background-color: #e5f3e5;
+    color: #2e5d34;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.description-recette {
+    padding: 0 15px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.titre-ingredients {
+    margin: 15px 15px 8px;
+    color: #2e5d34;
+    font-weight: bold;
+}
+
+.ingredients-recette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0 15px;
+}
+
+.ingredient {
+    background-color: #f1f1f1;
+    padding: 6px 9px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.difficulte-recette {
+    padding: 15px;
+    color: #444;
+}
+
+.feu {
+    font-size: 18px;
+}
+
+.date-recette {
+    padding: 0 15px 15px;
+    font-size: 13px;
+    color: #777;
+}
+
+.actions-recette {
+    display: flex;
+    gap: 6px;
+    padding: 12px;
+    background-color: #f8f8f8;
+}
+
+.actions-recette button {
+    flex: 1;
+    padding: 9px 5px;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: opacity 0.2s;
+}
+
+.actions-recette button:hover {
+    opacity: 0.8;
+}
+
+.btn-modifier {
+    background-color: #2878c8;
+}
+
+.btn-dupliquer {
+    background-color: #e6a23c;
+}
+
+.btn-supprimer {
+    background-color: #d94343;
+}
+
+
+
+
+
+/* Inputs, select et textarea */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2e5d34;
+    box-shadow: 0 0 5px rgba(46, 93, 52, 0.25);
+}
+
+/* Select */
+select {
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Textarea */
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Input fichier */
+input[type="file"] {
+    background-color: #f8f8f8;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Input range */
+input[type="range"] {
+    accent-color: #2e5d34;
+    cursor: pointer;
+}
+
+/* Labels du formulaire */
+.recipe-form label {
+    display: block;
+    font-weight: bold;
+    color: #2e5d34;
+    margin-top: 10px;
+}
+
+/* Aperçu de l'image */
+.apercu-image {
+    display: block;
+    max-width: 100%;
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+}
