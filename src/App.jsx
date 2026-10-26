@@ -14,10 +14,13 @@ import Recherche1 from './Recherche/Recherche1'
 import Fetch from './Recherche/Fetch'
 import Axios from './Recherche/Axios'
 import Recetteliste from './Tp4/Recetteliste'
+import {Routes,Route} from "react-router-dom"
 
 
 import Ex1 from './Tp3/Ex1'
 import Ex2 from './Tp3/Ex2'
+
+import TestUseaxios from './Hooks/TestUseaxios';
 
 
 function App() {
@@ -135,12 +138,12 @@ function App() {
 <br/>
 <br/>
 <br/>
-<Recetteliste/>
 
 
-
-
-
+<Routes>
+  <Route path="/recette" element={<Recetteliste/>} />
+  <Route path="/axios" element={<TestUseaxios/>} />
+</Routes>
       
 
 
